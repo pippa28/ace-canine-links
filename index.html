@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f4b51b" />
+  <meta name="description" content="Ace Canine Healthcare — science and nature for happier, healthier dogs." />
+  <title>Ace Canine | Featured Products</title>
+  <style>
+    :root{
+      --yellow:#f4b51b;
+      --yellow-deep:#e2a10d;
+      --ink:#111111;
+      --muted:#686868;
+      --paper:#fffdf6;
+      --white:#ffffff;
+      --line:rgba(17,17,17,.10);
+      --shadow:0 18px 50px rgba(17,17,17,.11);
+      --radius:28px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(244,181,27,.22), transparent 28%),
+        linear-gradient(180deg,#fffaf0 0%,#ffffff 42%,#fffaf0 100%);
+      min-height:100vh;
+    }
+    a{color:inherit}
+    .shell{width:min(760px,calc(100% - 28px));margin:0 auto;padding:24px 0 40px}
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:var(--yellow);
+      border-radius:34px;
+      padding:28px 24px 30px;
+      box-shadow:var(--shadow);
+      isolation:isolate;
+    }
+    .hero:after{
+      content:"";
+      position:absolute;
+      width:260px;height:260px;border-radius:50%;
+      right:-105px;top:-110px;
+      background:rgba(255,255,255,.25);
+      z-index:-1;
+    }
+    .logo-wrap{background:#fff;border-radius:18px;padding:14px 18px;display:inline-flex;align-items:center;box-shadow:0 8px 28px rgba(0,0,0,.08)}
+    .logo{width:min(270px,68vw);height:auto;display:block}
+    .eyebrow{margin:25px 0 8px;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800}
+    h1{font-size:clamp(2.2rem,8vw,4.25rem);line-height:.96;letter-spacing:-.055em;margin:0;max-width:650px}
+    .hero p{font-size:1.03rem;line-height:1.6;max-width:580px;margin:16px 0 0}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+    .pill{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:999px;padding:12px 17px;font-weight:800;font-size:.92rem;border:1px solid rgba(17,17,17,.14);transition:.2s ease}
+    .pill.primary{background:#111;color:#fff;border-color:#111}.pill.secondary{background:rgba(255,255,255,.48)}
+    .pill:hover{transform:translateY(-1px)}
+    .section-title{margin:34px 4px 14px;display:flex;align-items:end;justify-content:space-between;gap:12px}
+    .section-title h2{font-size:1.38rem;margin:0;letter-spacing:-.025em}.section-title span{font-size:.85rem;color:var(--muted)}
+    .products{display:grid;gap:16px}
+    .card{
+      display:grid;grid-template-columns:155px 1fr;gap:19px;align-items:center;
+      background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:var(--radius);
+      padding:16px;box-shadow:0 12px 35px rgba(17,17,17,.06);
+    }
+    .media{height:172px;border-radius:21px;background:linear-gradient(145deg,#fff8dc,#fff);display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid rgba(17,17,17,.07);position:relative}
+    .media img{width:100%;height:100%;object-fit:contain;display:block}
+    .media.flex img{width:88px;height:88px;image-rendering:auto;filter:drop-shadow(0 8px 10px rgba(0,0,0,.10))}
+    .tag{display:inline-flex;background:var(--yellow);padding:6px 10px;border-radius:999px;font-size:.73rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-bottom:9px}
+    .card h3{font-size:1.55rem;line-height:1.05;letter-spacing:-.035em;margin:0 0 8px}
+    .card p{margin:0;color:#555;line-height:1.48;font-size:.94rem}
+    .facts{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}
+    .fact{font-size:.76rem;background:#f6f6f3;border-radius:999px;padding:6px 9px;font-weight:700;color:#444}
+    .cta{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:900;margin-top:3px;padding:10px 0}
+    .cta span{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--yellow)}
+    .trust{margin-top:16px;background:#111;color:#fff;border-radius:28px;padding:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center}
+    .trust strong{display:block;font-size:.9rem}.trust small{display:block;color:#bcbcbc;margin-top:3px;line-height:1.35}
+    footer{text-align:center;color:#777;font-size:.82rem;padding:26px 8px 0;line-height:1.55}
+    footer a{font-weight:800;text-decoration:none;color:#111}
+    @media(max-width:590px){
+      .shell{width:min(100% - 18px,760px);padding-top:10px}
+      .hero{border-radius:26px;padding:22px 18px 25px}
+      .card{grid-template-columns:112px 1fr;gap:13px;padding:12px;border-radius:23px}
+      .media{height:145px;border-radius:17px}
+      .card h3{font-size:1.28rem}
+      .card p{font-size:.87rem}
+      .facts{margin:9px 0 4px}.fact{font-size:.68rem}
+      .trust{grid-template-columns:1fr;gap:15px;text-align:left}
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="logo-wrap"><img class="logo" src="assets/logo.webp" alt="Ace Canine Healthcare" /></div>
+      <div class="eyebrow">Science + Nature for dogs</div>
+      <h1>Helping dogs feel more like themselves.</h1>
+      <p>Natural, science-based canine healthcare from Ace Canine. Start with two of our featured support products below.</p>
+      <div class="hero-actions">
+        <a class="pill primary" href="#featured">See featured products</a>
+        <a class="pill secondary" href="https://www.ace-canine.com" target="_blank" rel="noopener">Visit full store ↗</a>
+      </div>
+    </section>
+
+    <div class="section-title" id="featured">
+      <h2>Featured right now</h2>
+      <span>Tap a product to shop</span>
+    </div>
+
+    <section class="products">
+      <article class="card">
+        <div class="media flex">
+          <img src="https://cdn.shopify.com/s/files/1/0561/0949/8558/products/FlexSprinkle.250.50_70x70.jpg?v=1664528693" alt="Flex Sprinkles Jointcare" />
+        </div>
+        <div>
+          <span class="tag">Joint care</span>
+          <h3>Flex Sprinkles</h3>
+          <p>Premium Green Lipped Mussel joint support, made for easy daily feeding and mobility support.</p>
+          <div class="facts"><span class="fact">Full-strength GLM</span><span class="fact">Made in the UK</span></div>
+          <a class="cta" href="https://www.ace-canine.com/products/flex-sprinkle-jointcare?variant=39544462737598" target="_blank" rel="noopener">Shop Flex Sprinkles <span>→</span></a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="media">
+          <img src="https://www.ace-canine.com/cdn/shop/files/RENEL_GUARD_FRONT.jpg?v=1775808277" alt="RenalGuard kidney support supplement for dogs" />
+        </div>
+        <div>
+          <span class="tag">Kidney support</span>
+          <h3>RenalGuard</h3>
+          <p>A triple-action renal supplement designed to support dogs alongside a renal diet.</p>
+          <div class="facts"><span class="fact">Triple action</span><span class="fact">Daily powder</span></div>
+          <a class="cta" href="https://www.ace-canine.com/products/renalguard?variant=56123767587195" target="_blank" rel="noopener">Shop RenalGuard <span>→</span></a>
+        </div>
+      </article>
+    </section>
+
+    <section class="trust" aria-label="Ace Canine benefits">
+      <div><strong>Science & nature</strong><small>Evidence-led canine healthcare</small></div>
+      <div><strong>UK developed</strong><small>Products developed in Ace Canine's own laboratory</small></div>
+      <div><strong>Shop securely</strong><small>Purchases continue on ace-canine.com</small></div>
+    </section>
+
+    <footer>
+      <strong>Ace Canine Healthcare</strong><br />
+      A friendly business who wants the same as you — a happy, healthy pet.<br />
+      <a href="https://www.ace-canine.com" target="_blank" rel="noopener">ace-canine.com</a>
+    </footer>
+  </main>
+</body>
+</html>
